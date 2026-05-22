@@ -1,5 +1,6 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { Menu, X } from 'lucide-react';
+import splashLogo from '../assets/splash-logo.jpeg';
 
 export default function Navbar({
   menuOpen: externalMenuOpen,
@@ -37,9 +38,10 @@ export default function Navbar({
       <nav className={`absolute top-6 left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-6xl ${menuOpen ? 'z-50' : 'z-30'} flex items-center justify-between px-6 py-3 rounded-full border border-white/10 bg-[#0a0a0c]/40 backdrop-blur-2xl shadow-[0_15px_40px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.18)] transition-all duration-500 hover:bg-[#0a0a0c]/55 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.95),inset_0_1px_2px_rgba(255,255,255,0.25)] hover:scale-[1.01] group/nav`}>
         
         {/* 1. Left aligned - Logo */}
-        <div className={`flex-1 flex justify-start items-center text-white select-none transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`flex-1 flex justify-start items-center gap-2.5 text-white select-none transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <img src={splashLogo} alt="Splash Logo" className="w-7 h-7 rounded-full object-cover border border-white/10" />
           <span className="text-lg sm:text-xl font-light tracking-tight font-serif italic text-white">
-            Splash<span className="font-sans font-light not-italic ml-1 text-[10px] uppercase tracking-widest text-[#DEDBC8]/70">Water</span><sup className="text-[8px] font-sans font-normal not-italic tracking-normal ml-0.5 opacity-60 text-[#DEDBC8]/70">TM</sup>
+            Splash<sup className="text-[8px] font-sans font-normal not-italic tracking-normal ml-0.5 opacity-60 text-[#DEDBC8]/70">TM</sup>
           </span>
         </div>
 
